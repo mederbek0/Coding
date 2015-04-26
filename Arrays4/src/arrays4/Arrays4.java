@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Largest Sum Contiguous Subarray
+Write an efficient C program to find the sum of contiguous subarray within a
+one-dimensional array of numbers which has the largest sum.
+
+
  */
 
 package arrays4;
