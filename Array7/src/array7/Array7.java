@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ There are two sorted arrays. First one is of size m+n containing only m elements. 
+Another one is of size n and contains n elements. Merge these two arrays into the 
+first array of size m+n such that the output is sorted.
  */
 
 package array7;
