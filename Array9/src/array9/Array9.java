@@ -56,7 +56,7 @@ public class Array9 {
         Ar a = new Ar(n);
         a.input();
         a.print();
-        a.reverse();
+        a.reverse();    
         a.print();
     }
     
