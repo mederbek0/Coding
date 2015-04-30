@@ -46,13 +46,28 @@ public class Array10 {
                 return gcd(b,a%b);
             
         }
-//        public void rotate(int k)
-//        {
-//            
-//            for(int i=0;i<k;i++)
-//                
-//        }
-//        
+        public void rotate(int k)
+        {
+            int n=gcd(a.length,k);
+            
+            for(int i=0;i<n;i++)
+            {
+                int temp=a[i],j=i,r;
+                while(true)
+                {
+                    r=j+k;
+                    if(r>=length)
+                        r=r-length;
+                    if(i==r)
+                        break;
+                    a[j]=a[r];
+                    j=r;
+                }
+                a[j]=temp;
+            }
+                
+        }
+        
     }
     public static void main(String[] args) {
         // TODO code application logic here
@@ -61,7 +76,9 @@ public class Array10 {
         Ar a=new Ar(n);
         a.input();
         a.print();
-        System.out.println(a.gcd(12,9));
+        a.rotate(2);
+        a.print();
+        
         
     }
     
