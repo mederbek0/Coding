@@ -1,9 +1,10 @@
 /*
-Write a C function to find if a given integer x appears 
-more than n/2 times in a sorted array of n integers.
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
-package array18;
+package array19;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,12 +13,12 @@ import java.util.Scanner;
  *
  * @author mederbekbegmatov
  */
-public class Array18 {
+public class Array19 {
 
     /**
      * @param args the command line arguments
      */
-     public static class Ar
+    public static class Ar
     {
           int[] a,b;
         int length;
@@ -31,7 +32,7 @@ public class Array18 {
         {
         Random ran=new Random();
         for (int i=0;i<length;i++)
-            a[i]=abs(ran.nextInt()%4);
+            a[i]=(ran.nextInt()%100);
         }
          
          public int abs(int b)
@@ -80,57 +81,68 @@ public class Array18 {
                 System.out.print(a[i]+" ");
             System.out.println();
         }
-        public void findMost()
-        {
-            int half=length/2+1,m=a[length/2], index=binarySearch(0,length-1,a[length/2]);
-            
-            
-            if (index+half<length) 
-            {
-                if (a[index+half]==m)
-                    System.out.println("Most numbers are= "+m);
-                else
-                    System.out.println("There is no majority");
-            }
-            else
-            System.out.println("no majority");
-        }
-        public int binarySearch(int left,int right, int num)
-        {
-            int mid=(left+right)/2;
-            while (true)
-            {
-                mid=(left+right)/2;
-                if ((mid==0 || mid==right)&&(left==right))
-                    if (mid==0)
-                        return -1;
-                    else
-                        return mid;
-                if (a[mid]<num && mid<right)
-                    if (a[mid+1]==num)
-                        return mid;
-                if (a[mid]>=num)
-                    right=mid;
-                else
-                    left=mid;
-                
-                    
-                
-            }
-            
-            
-        }
-     }
+     
+       public void findMinAndMax()
+       {
+           int min1,max1,i,k,l;
+           if (length%2==0)
+           {
+               
+                   min1=min(a[0],a[1]);
+                   max1=max(a[0],a[1]);
+                   i=2;
+               
+           }
+           else
+           {
+               min1=a[0];
+               max1=a[1];
+               i=1;
+           }
+           
+           for (int j=i;j<length;j+=2)
+           {
+               if (a[j]<a[j+1])
+               {
+                   if (min1>a[j])
+                       min1=a[j];
+                   if (max1<a[j+1])
+                       max1=a[j+1];        
+               }
+               else
+                {
+                   if (min1>a[j+1])
+                       min1=a[j+1];
+                   if (max1<a[j])
+                       max1=a[j];        
+               }   
+               
+           }
+           System.out.println("Minimum = "+min1+" maximum = "+max1);
+       }
+       public int min(int l,int k)
+       {
+           if (l<k)
+               return l;
+           else
+               return k;
+       }
+       public int max(int l, int k)
+       {
+           if (l>k)
+               return l;
+           else
+               return k;
+       }
+    }
     public static void main(String[] args) {
         // TODO code application logic here
-         Scanner in = new Scanner(System.in);
+           Scanner in = new Scanner(System.in);
         int n=in.nextInt();
         Ar a = new Ar(n);
         a.input();
         a.print();
-        a.mergeSort(0, n-1);
-        a.print();
-        a.findMost();
+        a.findMinAndMax();
     }
     
 }
