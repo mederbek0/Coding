@@ -53,8 +53,9 @@ public class Array23 {
             boolean yes=false;
             int mid=length/2;
             int left=0,right=length-1;
-            while (left<=right)
+            while (left<right)
             {
+               
                 mid=(left+right)/2;
                 if (k==a[mid])
                 {
@@ -65,11 +66,12 @@ public class Array23 {
                 }
                    else if (k>a[mid])
                 {
-                    left=mid;
+                    left=mid+1;
                 }
                 else
-                    right=mid;
+                    right=mid-1;
             }
+      
             if (yes)
                 System.out.println("floor= "+a[mid]+" ceiling= "+a[mid]);
             else
