@@ -54,12 +54,7 @@ public class Array27 {
                 System.out.print(a[i]+" ");
             System.out.println();
         }
-        public void swap(int k,int l)
-        {
-            int temp=a[k];
-            a[k]=a[l];
-            a[l]=temp;
-        }
+        
         
         
      
