@@ -54,7 +54,26 @@ public class Array27 {
                 System.out.print(a[i]+" ");
             System.out.println();
         }
-        
+        public void swap(int k,int l)
+        {
+            int temp=a[k];
+            a[k]=a[l];
+            a[l]=temp;
+        }
+        public void sort()
+        {
+            int low=0,mid=0,high=length-1;
+            while(mid<=high)
+            {
+                switch (a[mid])
+                {
+                    case 0:{swap(low++,mid++);break;}
+                    case 1:{mid++;break;}
+                    case 2:{swap(mid,high--);break;}
+                }
+                
+            }
+        }
         
         
      
@@ -62,6 +81,13 @@ public class Array27 {
     }
     public static void main(String[] args) {
         // TODO code application logic here
+        Scanner in = new Scanner(System.in);
+        int n=in.nextInt();
+        Ar a = new Ar(n);
+        a.input();
+        a.print();
+        a.sort();
+        a.print();
     }
     
 }
