@@ -53,6 +53,15 @@ public class List1 {
                 first=first.next;
             }
         }
+        public void pushToEnd(int n)
+        {
+            Node first=header;
+           while(first.next!=null)
+           {
+               first=first.next;
+           }
+           first.next=new Node(n);
+        }
         
     }
     public static void main(String[] args) {
@@ -65,6 +74,8 @@ public class List1 {
         a.push(5);
         a.push(6);
         a.push(7);
+        a.pushToEnd(10);
+        a.pushToEnd(11);
         System.out.println(a.pop());
         System.out.println(a.pop());
         a.traverse();
