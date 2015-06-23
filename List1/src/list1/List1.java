@@ -49,9 +49,10 @@ public class List1 {
             Node first =header;
             while (first.next!=null)
             {
-                System.out.println(first.next.data);
+                System.out.print(first.next.data+" ");
                 first=first.next;
             }
+            System.out.println();
         }
         public void pushToEnd(int n)
         {
@@ -61,6 +62,26 @@ public class List1 {
                first=first.next;
            }
            first.next=new Node(n);
+        }
+        public void DeleteNode(int n)
+        {
+            Node first=header;
+            Node prev=header;
+            while(first.next!=null)
+            {
+                prev=first;
+                first=first.next;
+                if (first.data==n) break;
+            }
+            if (first.data==n)
+            {
+                
+                prev.next=first.next;
+            }
+            else
+            {
+                System.out.println("Couldn't find Node");
+            }
         }
         
     }
@@ -78,7 +99,9 @@ public class List1 {
         a.pushToEnd(11);
         System.out.println(a.pop());
         System.out.println(a.pop());
+        a.DeleteNode(10);
         a.traverse();
+        
         
         
     }
