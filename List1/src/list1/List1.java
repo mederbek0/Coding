@@ -83,8 +83,20 @@ public class List1 {
                 System.out.println("Couldn't find Node");
             }
         }
-        
+        public int length()
+        {
+            Node first=header;
+            int count=0;
+            while(first.next!=null)
+            {
+                count++;
+                first=first.next;
+            }
+            
+            return count;
+        }
     }
+    
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner in =new Scanner(System.in);
@@ -101,6 +113,7 @@ public class List1 {
         System.out.println(a.pop());
         a.DeleteNode(10);
         a.traverse();
+        System.out.println(a.length());
         
         
         
