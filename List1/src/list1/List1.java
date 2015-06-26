@@ -95,6 +95,25 @@ public class List1 {
             
             return count;
         }
+        public int Nth(int count)
+        {
+            Node first=header;
+            int num=-1;
+            boolean yes=false;
+            while(first.next!=null)
+            {
+                first=first.next;
+                if (count==0)
+                {
+                    num=first.data;
+                    yes=true;
+                }
+                count--;
+                
+            }
+            
+            return num; 
+        }
     }
     
     public static void main(String[] args) {
@@ -114,6 +133,7 @@ public class List1 {
         a.DeleteNode(10);
         a.traverse();
         System.out.println(a.length());
+        System.out.println(a.Nth(3));
         
         
         
