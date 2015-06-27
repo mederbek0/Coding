@@ -151,6 +151,20 @@ public class List1 {
             }
             return first.data;
         }
+        public void reverseList()
+        {
+            Node temp,first=header.next,prev=null;
+            while (first.next!=null)
+            {
+               temp=first.next;
+               first.next=prev;
+               prev=first;
+               first=temp;
+               
+            }
+            first.next=prev;
+            header.next=first;
+        }
     }
     
     public static void main(String[] args) {
@@ -176,6 +190,9 @@ public class List1 {
         System.out.println(a.Nth(3));
         System.out.println(a.middle());
         System.out.println(a.NthfromEnd(4));
+        a.reverseList();
+        System.out.println("a");
+        a.traverse();
         
         
     }
