@@ -114,6 +114,43 @@ public class List1 {
             
             return num; 
         }
+        public int middle()
+        {
+            Node first=header,second=header;
+            while(second!=null)
+            {
+                first=first.next;
+                if (second.next!=null)
+                    second=second.next.next;
+                else
+                    second=second.next;
+            }
+            return first.data;
+        }
+        public int NthfromEnd(int n)
+        {
+            int counter=0;
+            Node first=header,second=header;
+            while(counter<n)
+            {
+                if (second==null)
+                {
+                    System.out.println("The linked list shorter than entered number");
+                    return -1;
+                }
+                else
+                {
+                    second=second.next;
+                    counter++;
+                }
+            }
+            while (second!=null)
+            {
+                first=first.next;
+                second=second.next;
+            }
+            return first.data;
+        }
     }
     
     public static void main(String[] args) {
@@ -126,6 +163,9 @@ public class List1 {
         a.push(5);
         a.push(6);
         a.push(7);
+        a.push(20);
+        a.push(12);
+        a.push(0);
         a.pushToEnd(10);
         a.pushToEnd(11);
         System.out.println(a.pop());
@@ -134,7 +174,8 @@ public class List1 {
         a.traverse();
         System.out.println(a.length());
         System.out.println(a.Nth(3));
-        
+        System.out.println(a.middle());
+        System.out.println(a.NthfromEnd(4));
         
         
     }
