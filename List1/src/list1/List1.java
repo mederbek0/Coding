@@ -163,7 +163,24 @@ public class List1 {
                
             }
             first.next=prev;
-            header.next=first;
+            header.next=first   ;
+        }
+        public void findLoop()
+        {
+            Node first=header,second=header;
+            while(second.next!=null)
+            {
+                first=first.next;
+                second=second.next.next;
+                if (first==second)
+                {
+                    System.out.println("Found Loop");
+                    return;
+                }
+                
+            }
+            System.out.println("Not found");
+            return;
         }
     }
     
@@ -193,7 +210,7 @@ public class List1 {
         a.reverseList();
         System.out.println("a");
         a.traverse();
-        
+        a.findLoop();
         
     }
     
