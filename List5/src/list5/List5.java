@@ -223,8 +223,23 @@ public class List5 {
             rec(k.next);
         }
         if (k.data!=-11)
-        System.out.print(k.data+" ");
+        System.out.print(k.data+" "); 
     }
+    public static void removeDuplicate(Node k)
+    {
+       Node first=k;
+       while(first.next!=null)
+       {
+           if (first.data==first.next.data)
+           {
+               first.next=first.next.next;
+           }
+           else
+               first=first.next;
+       }
+    }
+    
+    
     public static void link(LinkedList a,LinkedList b)
     {
         Node first=b.header;
@@ -283,13 +298,16 @@ public class List5 {
         LinkedList a= new LinkedList();
         LinkedList b=new LinkedList();
         a.push(9);
+        a.push(9);
         a.push(8);
         a.push(7);
         a.push(6);
         a.push(5);
         a.push(4);
+        a.push(4);
         a.push(3);
         a.push(2);
+        a.push(1);
         a.push(1);
         b.push(1);
         b.push(2);
@@ -298,13 +316,15 @@ public class List5 {
         a.traverse();
         a.addNode(-1);
         b.traverse();
-        link(a,b);
+        //link(a,b);
         a.traverse();
         b.traverse();
         a.traverse();
-        intersection(a,b);
+        //intersection(a,b);
         //System.out.println(a.isPalindrome());
-        rec(a.header);
+       // rec(a.header);
+        removeDuplicate(a.header);
+        a.traverse();
     }
     
 }
