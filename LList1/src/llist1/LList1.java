@@ -12,6 +12,7 @@ import java.lang.String;
 import java.util.Scanner;
 import java.util.List;
 import java.io.File;
+import java.io.PrintWriter;
 /**
  *
  * @author mederbekbegmatov
@@ -40,6 +41,11 @@ public class LList1 {
             array3[i]=array[i]+array1[i];
         for(int i=0;i<array1.length;i++)
             System.out.print(array3[i]+" ");
+        PrintWriter out=new PrintWriter("output.txt", "UTF-8");
+        for (int i=0;i<array3.length;i++)
+            out.print(array3[i]+" ");
+        out.close();
+        
         
         
     }
