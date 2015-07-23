@@ -29,6 +29,7 @@ public class LList2 {
             list.print();
             list.reverse();
             list.print();
+            System.out.println(list.middle().data);
             
        
     }

@@ -74,5 +74,22 @@ public class LinkedList {
         this.head=prev;
     
     }
+    //middle element
+    public Node middle(){
+        Node first=head,fast=head;
+        while(fast!=null && fast.next!=null)
+        {
+            first=first.next;
+            fast=fast.next.next;
+        }
+        return first;
+    }
+    //mergesort data;
+    public void sort(){
+    
+    
+    
+    }
+    
     
 }
