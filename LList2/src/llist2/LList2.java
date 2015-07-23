@@ -24,7 +24,7 @@ public class LList2 {
         LinkedList list=new LinkedList();
             while (in.hasNext()){
         
-            list.add(new Node(in.nextInt()));
+            list.addToEnd(new Node(in.nextInt()));
             }
             list.print();
             list.reverse();

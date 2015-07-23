@@ -15,7 +15,7 @@ public class LinkedList {
     public LinkedList(){
     this.head=null;
     }
-    //adding Node to head;
+    //adding Node to the beginning;
     public void add(Node k){
         if (this.head==null){
             this.head=k;
@@ -26,6 +26,26 @@ public class LinkedList {
             head=k;
         }
         
+    }
+    //adding Node to the end
+    public void addToEnd(Node k){
+        if (this.head==null)
+        {
+            this.head=k;
+        }
+        else
+        {
+            Node first=this.head;
+            Node prev=null;
+            while(first!=null)
+            {
+                prev=first;
+                first=first.next;
+            }
+            prev.next=k;
+        }
+    
+    
     }
     //method to print whole list
     public void print(){
