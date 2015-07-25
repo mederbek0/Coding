@@ -30,7 +30,7 @@ public class LList2 {
             list.reverse();
             list.print();
             System.out.println(list.middle().data);
-            
+            list.print();
        
     }
     
