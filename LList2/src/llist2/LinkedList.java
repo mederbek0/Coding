@@ -57,6 +57,15 @@ public class LinkedList {
         }
         System.out.println();
     }
+    public void print(Node k){
+        Node first=k;
+        while(first!=null)
+        {
+            System.out.print(first.data+" ");
+            first=first.next;
+        }
+        System.out.println();
+    }
     
     //method to reverse whole list
     
@@ -79,16 +88,100 @@ public class LinkedList {
         Node first=head,fast=head;
         while(fast!=null && fast.next!=null)
         {
-            first=first.next;
+            if (fast.next.next!=null)
+                first=first.next;
+            
             fast=fast.next.next;
         }
         return first;
     }
     //mergesort data;
+     public Node middle(Node k){
+        Node first=k,fast=k;
+        while(fast!=null && fast.next!=null)
+        {
+            if (fast.next.next!=null)
+                first=first.next;
+            
+            fast=fast.next.next;
+        }
+        return first;
+    }
+    
+    public Node rightHalf(Node k){
+        Node j=middle(k).next;
+        middle(k).next=null;
+        return j;
+    
+    }
+    
     public void sort(){
+        head=Msort(head);
+        
+    }
+    public Node merge(Node left, Node right){
+        Node k;
+        if (left==null || right==null)
+        {
+            if (left==null && right==null)
+                return right;
+            else if (left==null)
+                return right;
+            else
+                return left;
+        
+        }
+        
+        if (left.data<right.data)
+           {
+               k=left;
+               left=left.next;
+           }
+           else
+           {
+               k=right;
+               right=right.next;
+           }
+        Node m=k;
+        while (left!=null && right!=null)
+        {
+            if (left.data<right.data)
+           {
+               k.next=left;
+               left=left.next;
+           }
+           else
+           {
+               k.next=right;
+               right=right.next;
+           }
+            k=k.next;
+           
+        }
+        
+        while(left!=null){
+            k.next=left;
+            left=left.next;
+            k=k.next;
+        }
+        while (right!=null)
+        {
+            k.next=right;
+            right=right.next;
+            k=k.next;
+        }
+    return m;
     
-    
-    
+    }
+    public Node Msort(Node k){
+        
+        if ((k!=null && k.next==null)||k==null)
+            return k;
+        Node right=Msort(rightHalf(k));
+        Node left =Msort(k);
+        Node m=merge(right,left);
+       // print(m);
+    return m;
     }
     
     
