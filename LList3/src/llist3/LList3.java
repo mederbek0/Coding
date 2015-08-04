@@ -24,7 +24,7 @@ public class LList3 {
         LinkedList list=new LinkedList();
         while(in.hasNext())
         {
-            list.addNode(new Node(in.nextInt()));
+            list.addNodeToEnd(new Node(in.nextInt()));
         }
         list.print();
         Node a=new Node(4);
@@ -34,7 +34,9 @@ public class LList3 {
         list.print();
         list.remove(b);
         list.print();
-        list.segregate();
+       // list.segregate();
+        list.print();
+        list.RightGreat();
         list.print();
     }
     

@@ -108,6 +108,40 @@ public class LinkedList {
     }
     
     //
+    public void reverse(){
+        Node first=this.head;
+        Node prev=null;
+        while(first!=null){
+            Node temp=first.next;
+            first.next=prev;
+            prev=first;
+            first=temp;
+        }
+        this.head=prev;
+    }
+    //
+    
+    public void RightGreat(){
+        reverse();
+        Node first=this.head;
+        int min=this.head.data;
+        int max=this.head.data;
+        while(first!=null){
+            if (first.data>=max)
+            {
+                max=first.data;
+            }
+            else
+            {
+                remove(first);
+            }
+            first=first.next;
+        
+        
+        }
+        reverse();
+    }
+    //
     public void print(){
         Node first=this.head;
         while(first!=null){
