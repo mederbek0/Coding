@@ -40,5 +40,10 @@ public class Stack {
             return list.head().data;
       return 0;  
     }
+    public boolean isEmpty(){
+        if (list.head==null)
+            return true;
+        return false;
+    }
     
 }
