@@ -29,6 +29,9 @@ public class Tree1 {
         
         }
         tr.traverse(tr.root);
+     //  System.out.println(tr.root.data);
+       
+        System.out.println(tr.sizeOf(tr.root));
     }
     
 }

@@ -45,4 +45,12 @@ public class Tree {
         
     }
     
+    public int sizeOf(Node k)
+    {
+        if (k==null)
+            return 0;
+        else
+            return (sizeOf(k.left)+1+sizeOf(k.right));
+    }
+    
 }
