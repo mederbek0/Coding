@@ -31,7 +31,7 @@ public class LList2 {
             list.print();
             System.out.println(list.middle().data);
             list.sort();
-            list.print();
+            list.print(sd);
     }
     
 }

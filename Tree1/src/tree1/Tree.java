@@ -18,53 +18,30 @@ public class Tree {
     }
     public void add(Node k)
     {
-        boolean yes=false;
-        if (root==null)
-            root=k;
-        Node current=root;
-        while(current!=null && !yes)
-        {
-            System.out.println(current.data+" "+k.data);
-            if (current.data>k.data)
-            {
-                if (current.right!=null)
-                {
-                    current=current.right;
-                }
-                else
-                {
-                    current.right=k;
-                    current=current.right;
-                    yes=true;
-                    //break;
-                    
-                }
-            }
-            else
-            {
-                if (current.left!=null)
-                { current=current.left;
-                }
-                else
-                {
-                    System.out.println("null");
-                    current.left=k;
-                    current=current.left;
-                    yes=true;
-                    //break;
-                }
-            }
-            
-        }
+        root=putIn(root,k);
+    }
+    public Node putIn(Node current, Node element)
+    {
+        if(current==null)
+            return current=element;
+        
+        if(current.data>element.data)
+             current.right=putIn(current.right,element);
+        else
+            current.left=putIn(current.left,element);
+      return current;  
     }
     
     public void traverse(Node head)
     {
         if (head==null)
             return;
+       // System.out.println(head.data+" ");
+        
         traverse(head.left);
         System.out.println(head.data+" ");
         traverse(head.right);
+        //System.out.println(head.data+" ");
         
     }
     

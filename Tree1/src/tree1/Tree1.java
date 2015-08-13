@@ -20,22 +20,12 @@ public class Tree1 {
         // TODO code application logic here
         Scanner in=new Scanner(new File("input.txt"));
         Tree tr=new Tree();
-        System.out.println("1");
+       // System.out.println("1");
         int k;
-       // while(in.hasNext())
+        while(in.hasNext())
         {
             k=in.nextInt();
             tr.add(new Node(k));
-            System.out.println(k);
-        //
-            k=in.nextInt();
-            tr.add(new Node(k));
-            System.out.println(k);
-        //
-            k=in.nextInt();
-            tr.add(new Node(k));
-            System.out.println(k);
-        
         
         }
         tr.traverse(tr.root);
