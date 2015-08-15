@@ -33,12 +33,33 @@ public class Tree1 {
         tr.root.left.left= new Node(2);
         tr1.root.left.left= new Node(2);
         
+        
+        
+        
         tr.traverse(tr.root);
      //  System.out.println(tr.root.data);
        
         System.out.println(tr.sizeOf(tr.root));
+        System.out.println(isEqual(tr.root,tr1.root));
     }
     
+    public static boolean isEqual(Node head1, Node head2){
+        if (head1==null && head2==null)
+            return true;
+        else 
+            if (boolToInt(head1,head2))
+            return ( 
+                    isEqual(head1.right,head2.right) 
+                    && isEqual(head1.left,head2.left));
+        return false;
+          
+    }
     
+    public static boolean boolToInt(Node k,Node b)
+    {
+        if (k.data==b.data)
+            return true;
+        else return false;
+    }
     
 }
