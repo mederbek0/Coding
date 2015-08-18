@@ -31,7 +31,7 @@ public class Tree1 {
         
         tr.root.left.right= new Node(2);
         tr1.root.left.right= new Node(5);
-        tr.root.left.left= new Node(2);
+        tr.root.left.left= new Node(8);
         tr1.root.left.left= new Node(2);
         tr1.root.left.left.right= new Node(10);
          tr1.root.left.left.right.left= new Node(30);
@@ -42,10 +42,12 @@ public class Tree1 {
         tr.traverse(tr.root);
      //  System.out.println(tr.root.data);
        
-        System.out.println(tr.sizeOf(tr.root));
-        System.out.println(isEqual(tr.root,tr1.root));
+       // System.out.println(tr.sizeOf(tr.root));
+       // System.out.println(isEqual(tr.root,tr1.root));
         
         System.out.println("height "+ tr1.height());
+        tr.mirror();
+        tr.traverse(tr.root);
     }
     
     public static boolean isEqual(Node head1, Node head2){

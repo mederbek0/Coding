@@ -74,4 +74,19 @@ public class Tree {
             
     }
     
+    public void mirror()
+    {
+       toMirror(root);
+    }
+    
+    public void toMirror(Node k)
+    {
+        if (k==null)
+            return;
+        toMirror(k.left);
+        toMirror(k.right);
+        Node temp=k.left;
+        k.left=k.right;
+        k.right=temp;
+    }
 }
