@@ -28,11 +28,14 @@ public class Tree1 {
         tr1.root.right=new Node(4);
         tr.root.left= new Node(3);
         tr1.root.left= new Node(3);
-        tr.root.left.right= new Node(5);
+        
+        tr.root.left.right= new Node(2);
         tr1.root.left.right= new Node(5);
         tr.root.left.left= new Node(2);
         tr1.root.left.left= new Node(2);
-        
+        tr1.root.left.left.right= new Node(10);
+         tr1.root.left.left.right.left= new Node(30);
+      
         
         
         
@@ -41,12 +44,18 @@ public class Tree1 {
        
         System.out.println(tr.sizeOf(tr.root));
         System.out.println(isEqual(tr.root,tr1.root));
+        
+        System.out.println("height "+ tr1.height());
     }
     
     public static boolean isEqual(Node head1, Node head2){
         if (head1==null && head2==null)
             return true;
         else 
+            if (head1==null || head2==null)
+            return false;
+        else
+                
             if (boolToInt(head1,head2))
             return ( 
                     isEqual(head1.right,head2.right) 
@@ -61,6 +70,7 @@ public class Tree1 {
             return true;
         else return false;
     }
+    
     
 
 

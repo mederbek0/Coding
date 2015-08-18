@@ -53,4 +53,25 @@ public class Tree {
             return (sizeOf(k.left)+1+sizeOf(k.right));
     }
     
+    public int max(int a, int b)
+    {
+        if (a>b)
+            return a;
+        else 
+            return b;
+    }
+    
+    public int height()
+    {
+        return findHeight(this.root);
+    }
+    
+    public int findHeight(Node k)
+    {
+        if (k==null)
+            return 0;
+        return 1+max(findHeight(k.left),findHeight(k.right));
+            
+    }
+    
 }
