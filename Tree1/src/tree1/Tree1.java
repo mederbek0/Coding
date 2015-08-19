@@ -31,6 +31,7 @@ public class Tree1 {
         
         tr.root.left.right= new Node(2);
         tr1.root.left.right= new Node(5);
+          tr1.root.left.right.left= new Node(2);
         tr.root.left.left= new Node(8);
         tr1.root.left.left= new Node(2);
         tr1.root.left.left.right= new Node(10);
